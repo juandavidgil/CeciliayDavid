@@ -6,12 +6,29 @@
     <link rel="stylesheet" href="../css/style.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../jquery-3.7.1.min.js"></script>
     <title>MOTOS</title>
      <!--Fonts-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+<script>
+    $(document).ready(function() {
+        $("#contactBtn").click(function(event) {
+            event.preventDefault();
+            $(".formulario").toggle();
+        });
+
+        $("#registerForm").submit(function(event) {
+            event.preventDefault(); // Evita el envío real del formulario//
+            $(".formulario").hide();
+            alert("Formulario enviado. Redirigiendo al conacto inicial...");
+        
+        });
+    });
+</script>
+
 <body>
     <header>
         <img src="../img/logo.jpg" alt="MOTO">
@@ -20,7 +37,7 @@
             <ul> 
                 <li><a href="index.html">Inicio</a> </li>
                 <li><a href="categorias.html">Categorias</a> </li>
-                <li><a href="contactanos.html">Contactanos</a> </li>
+                <li><a href="#" id="ContactBton">Contactanos</a> </li>
             </ul>
         </nav>
     </header>
@@ -30,7 +47,7 @@
            
            
           
-            <form class="formulario" action="" method="post">
+            <form class="formulario" id="registerForm" action="" method="post">
             <label for="Nombre">Nombre</label>
             <input type="text" name="Nombre">
             <br>
@@ -69,8 +86,7 @@
 
             <input class="enviar" type="submit" value="enviar">
         </main>
-   
-    
+
 </body>
 
 
